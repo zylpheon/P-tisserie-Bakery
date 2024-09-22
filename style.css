@@ -252,4 +252,48 @@ footer p:hover {
   .product {
     flex: 1 1 calc(40% - 20px); /* Dua produk dalam satu baris di mobile */
   }
+  main {
+    display: grid;
+  }
+  aside img {
+    justify-content: center;
+  }
+}
+@media (max-width: 425px) {
+  header#home {
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+  }
+  header#home::before {
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+  }
+  h1.title {
+    font-size: 2rem;
+  }
+  article p {
+    font-size: 13px;
+  }
+  .product p {
+    font-size: 10px;
+    margin: 0;
+  }
+  .contact {
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+  }
+  .form-group label {
+    font-size: 15px;
+  }
+  .form-group input,
+  .form-group textarea {
+    font-size: 12px;
+    width: 92%;
+  }
+  button[type="submit"] {
+    font-size: 10px;
+  }
+  footer p {
+    font-size: 10px;
+  }
 }
