@@ -1,0 +1,255 @@
+/* Menggunakan font Poppins */
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #fadfc4;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #97562c;
+  z-index: 999999;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 0 15px;
+  transition: 0.3s ease-in-out;
+  border-bottom: 3px solid transparent;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 15px 0;
+  display: block;
+}
+
+nav ul li:hover {
+  color: #f5f5f5;
+  border-bottom: 3px solid #f5f5f5;
+  transform: scale(1.03);
+}
+
+header#home {
+  position: relative;
+  height: 100vh;
+  background: url("img/bg.jpg") no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom-left-radius: 5rem;
+  border-bottom-right-radius: 5rem;
+}
+
+header#home::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(231, 184, 139, 0.6); /* Semi-transparan overlay */
+  z-index: 1;
+  border-bottom-left-radius: 5rem;
+  border-bottom-right-radius: 5rem;
+}
+
+header#home .home {
+  position: relative;
+  z-index: 2; /* Pastikan content muncul di atas overlay */
+  text-align: center;
+}
+
+main {
+  display: flex;
+  flex: 1;
+  padding: 20px;
+  height: 100vh;
+}
+
+article {
+  flex: 3;
+  margin-left: 20px; /* Agar ada jarak di sebelah kiri artikel */
+  order: 2; /* Urutan kedua, agar artikel berada di sebelah kanan */
+}
+
+aside {
+  flex: 1;
+  background-color: #facca1;
+  border-radius: 1rem;
+  text-align: center;
+}
+
+aside h2 {
+  margin: 5px 0 5px 0;
+}
+
+aside img {
+  max-width: 60%;
+  margin-bottom: 20px;
+  transition: ease-in-out 0.3s;
+}
+
+aside img:hover {
+  transform: scale(1.1);
+}
+
+img {
+  max-width: 100%;
+  border-radius: 1rem;
+  height: auto;
+}
+
+/* Styling untuk memastikan tidak ada tumpang tindih */
+h1 {
+  margin-top: 20px;
+  font-size: 3rem;
+}
+
+h1.title {
+  transition: 0.3s ease-in-out;
+}
+
+h1.title:hover {
+  transform: scale(1.02);
+}
+
+p.title {
+  transition: 0.3s ease-in-out;
+}
+
+p.title:hover {
+  transform: scale(1.02);
+}
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Jarak antar produk */
+  padding: 0 20px 20px 20px;
+}
+
+.product {
+  flex: 1 1 calc(20% - 20px); /* Empat produk dalam satu baris di desktop */
+  background-color: #f4f4f4;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 1rem;
+  box-shadow: 5px 10px 8px #945f3b;
+  transition: ease-in-out 0.3s;
+}
+
+.product:hover {
+  transform: scale(1.02);
+  box-shadow: 5px 10px 8px #97562c;
+}
+
+.product img {
+  max-width: 100%;
+  height: auto;
+}
+
+.product h4 {
+  margin: 5px 0 5px 0;
+}
+
+.product p {
+  font-size: 13px;
+  color: #666;
+}
+
+.contact {
+  background-color: #facca1;
+  padding: 20px;
+  color: white;
+  text-align: center;
+  border-top-left-radius: 5rem;
+  border-top-right-radius: 5rem;
+}
+
+.contact h3 {
+  margin-bottom: 20px;
+}
+
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-family: "Poppins", sans-serif;
+}
+
+button[type="submit"] {
+  background-color: #97562c;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  transition: 0.3s ease-in-out;
+}
+
+button[type="submit"]:hover {
+  background-color: #945f3b;
+  transform: scale(1.02);
+}
+
+footer {
+  background-color: #97562c;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  width: 100%;
+}
+
+footer p {
+  transition: ease-in-out 0.3s;
+}
+
+footer p:hover {
+  transform: scale(1.02);
+}
+
+/* Responsive untuk tampilan mobile */
+@media (max-width: 768px) {
+  nav ul li a {
+    font-size: 12px;
+  }
+  .product {
+    flex: 1 1 calc(40% - 20px); /* Dua produk dalam satu baris di mobile */
+  }
+}
