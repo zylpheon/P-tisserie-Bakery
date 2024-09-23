@@ -78,9 +78,9 @@ header#home .home {
 
 main {
   display: flex;
-  flex: 1;
   padding: 20px;
   height: 100vh;
+  align-items: center;
 }
 
 article {
@@ -97,17 +97,20 @@ aside {
 }
 
 aside h2 {
-  margin: 5px 0 5px 0;
+  margin: 5px 0;
 }
 
 aside img {
   max-width: 60%;
-  margin-bottom: 20px;
   transition: ease-in-out 0.3s;
 }
 
 aside img:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
+}
+
+aside p {
+  margin: 5px 0;
 }
 
 img {
@@ -139,21 +142,28 @@ p.title:hover {
 }
 
 .products {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px; /* Jarak antar produk */
-  padding: 0 20px 20px 20px;
+  padding-bottom: 10vh;
+  text-align: center;
+}
+
+.products-container {
+  border-radius: 1rem;
+  padding: 20px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
 }
 
 .product {
-  flex: 1 1 calc(20% - 20px); /* Empat produk dalam satu baris di desktop */
   background-color: #f4f4f4;
-  padding: 10px;
-  text-align: center;
   border: 1px solid #ddd;
-  border-radius: 1rem;
   box-shadow: 5px 10px 8px #945f3b;
-  transition: ease-in-out 0.3s;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
 }
 
 .product:hover {
@@ -178,13 +188,13 @@ p.title:hover {
 .contact {
   background-color: #facca1;
   padding: 20px;
-  color: white;
   text-align: center;
   border-top-left-radius: 5rem;
   border-top-right-radius: 5rem;
 }
 
 .contact h3 {
+  font-size: 30px;
   margin-bottom: 20px;
 }
 
@@ -249,11 +259,12 @@ footer p:hover {
   nav ul li a {
     font-size: 12px;
   }
-  .product {
-    flex: 1 1 calc(40% - 20px); /* Dua produk dalam satu baris di mobile */
+  .products-container {
+    grid-template-columns: repeat(2, 1fr);
   }
   main {
     display: grid;
+    height: auto;
   }
   aside img {
     justify-content: center;
@@ -270,6 +281,9 @@ footer p:hover {
   }
   h1.title {
     font-size: 2rem;
+  }
+  aside p {
+    font-size: 10px;
   }
   article p {
     font-size: 13px;
